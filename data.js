@@ -371,18 +371,49 @@ const deckData = [
       {
         "id": "3-8", "type": "read-el", 
         "front": "Γ / γ (Gamma)",
-        "answer": "Se prononce comme un 'g' très doux, proche du 'y' ou du 'gh'."
+        "answer": "Se prononce comme un <i>g</i> très doux, proche du <i>y</i> ou du <i>gh</i>."
       },
       {
         "id": "3-9", "type": "read-el", 
         "front": "Δ / δ (Delta)",
-        "answer": "Se prononce comme le 'th' de 'this' en anglais."
+        "answer": "Se prononce comme le <i>th</i> de <i>this</i> en anglais."
       },
       {
         "id": "3-10", "type": "read-el", 
         "front": "Ε / ε (Epsilon)",
-        "answer": "Se prononce comme le 'é' français."
+        "answer": "Se prononce comme le <i>é</i> français."
       }
     ]
   },
+  // ==========================================
+  // DECK 4
+  // ==========================================
+  {
+    "id": "4",
+    "name": "Morning questions",
+    "defaultDate": "5/11/2026",
+    "cards": [
+      {
+        "id": "4-1", "type": "gr-sv", 
+        "front": "What is the difference between &quot;den&quot;, &quot;det&quot; and &quot;de&quot;?",
+        "answer": "Den = Common gender (en-words) / &quot;it, he, she&quot;.<br>Det = Neuter gender (ett-words) / &quot;it&quot;.<br>De = Plural / &quot;they&quot;. ;; nt: &quot;De&quot; is usually pronounced [dom] in spoken Swedish. Examples : Den är bra (It is good).<br>Det är en bok (It is a book).<br>De är här (They are here)."
+      },
+      {
+        "id": "4-2", "type": "gr-sv", 
+        "front": "What is the difference between &quot;har&quot; and &quot;här&quot;?",
+        "answer": "Har = have/has (<i>att ha</i>).<br>Här = here (location). ;; nt: Examples : Jag har en bil (I have a car).<br>Jag är här (I am here)."
+      },
+      {
+        "id": "4-3", "type": "gr-sv", 
+        "front": "How do you conjugate grupp 1 in Swedish?",
+        "answer": "Group 1 is the largest regular verb group. The stem usually ends in &quot;a&quot;.<br>Endings -> Present: -ar | Past: -ade | Supine: -at | Imperative: -a. Example : ringa (to ring) -> ringar, ringade, ringat, ringa!"
+      },
+      {
+        "id": "4-4", "type": "voc-sv", 
+        "front": "Som",
+        "answer": "As / That / Who / Which / Like",
+        "detect": "som"
+      }
+    ] 
+  }
 ];
