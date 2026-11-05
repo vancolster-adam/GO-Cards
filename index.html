@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Cartes - Apprentissage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="counter en-cours"><span class="count">0</span> En cours</div>
+        
+        <!-- Le nouveau bouton toggle au milieu -->
+        <!-- Le bouton toggle au milieu -->
+        <div class="toggle-container" id="toggleContainer">
+            <span class="toggle-label">Inverser la carte</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="reverseCardToggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="counter connus"><span class="count">0</span> Connus</div>
+    </header>
+
+    <!-- ZONE CENTRALE (Carte + Boutons) -->
+    <main class="main-content">
+        <div class="card-container">
+            <div class="card" id="flashcard" onclick="flipCard()">
+                <div class="card-inner" id="cardInner">
+                    <div class="card-face card-front">
+                        <h1 class="question-text" id="frontText">Chargement...</h1>
+                        <div class="flags-container" id="frontFlags"></div>
+                    </div>
+                    <div class="card-face card-back">
+                        <div class="answers-container" id="answersContainer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Les boutons sont maintenant juste sous la carte -->
+        <div class="action-buttons">
+            <button class="btn btn-false" id="btnFalse">✕</button>
+            <button class="btn btn-validate" id="btnValidate" style="display: none;">➔</button>
+            <button class="btn btn-restart" id="btnRestart" style="display: none;">↻</button>
+            <button class="btn btn-true" id="btnTrue">✓</button>
+        </div>
+    </main>
+
+    <!-- BANDEAU DE FILTRES (Tout en bas) -->
+    <footer class="filter-banner">
+        <div class="filter-row">
+            <span class="filter-label">Types :</span>
+            <label class="pill"><input type="checkbox" class="type-filter" checked value="trad"><span>Translation</span></label>
+            <label class="pill"><input type="checkbox" class="type-filter" value="voc"><span>Vocabulary</span></label>
+            <label class="pill"><input type="checkbox" class="type-filter" value="gr"><span>Grammar</span></label>
+            <label class="pill"><input type="checkbox" class="type-filter" value="read"><span>Reading</span></label>
+        </div>
+
+        <div class="filter-row">
+            <span class="filter-label">Langues :</span>
+            <label class="pill"><input type="checkbox" class="lang-filter" checked value="sv"><span>Svenska</span></label>
+            <label class="pill"><input type="checkbox" class="lang-filter" checked value="en"><span>English</span></label>
+            <label class="pill"><input type="checkbox" class="lang-filter" checked value="fr"><span>Français</span></label>
+            <label class="pill"><input type="checkbox" class="lang-filter" checked value="es"><span>Español</span></label>
+            <label class="pill"><input type="checkbox" class="lang-filter" checked value="it"><span>Italiano</span></label>
+            <label class="pill"><input type="checkbox" class="lang-filter" checked value="ja"><span>日本語</span></label>
+            <label class="pill"><input type="checkbox" class="lang-filter" checked value="zh"><span>中文</span></label>
+            <label class="pill"><input type="checkbox" class="lang-filter" checked value="he"><span>עברית</span></label>
+            <label class="pill"><input type="checkbox" class="lang-filter" checked value="ar"><span>العربية</span></label>
+            <label class="pill"><input type="checkbox" class="lang-filter" checked value="pt"><span>Português</span></label>
+            <label class="pill"><input type="checkbox" class="lang-filter" checked value="ru"><span>Русский</span></label>
+            <label class="pill"><input type="checkbox" class="lang-filter" checked value="el"><span>Ελληνικά</span></label>
+        </div>
+
+        <div class="filter-row date-row">
+            <span class="filter-label">Période :</span>
+            <span id="dateDisplayStart" class="date-display">--/--/----</span>
+            
+            <!-- La frise chronologique -->
+            <div class="timeline-container">
+                <div class="timeline-years" id="timelineYears"></div> <!-- Les années en haut -->
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <div class="timeline-ticks" id="timelineTicks"></div> <!-- Les marques des cartes -->
+                    </div>
+                    <input type="range" id="dateMin" min="0" max="100" value="0">
+                    <input type="range" id="dateMax" min="0" max="100" value="100">
+                </div>
+            </div>
+            
+            <span id="dateDisplayEnd" class="date-display">--/--/----</span>
+        </div>
+    </footer>
+    <div id="global-tooltip"></div>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
